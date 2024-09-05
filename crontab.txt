@@ -1,0 +1,2 @@
+0 7 * * 1,2,5 i/usr/local/bin/python3 /Users/ssuri/downloads/"NFLPPA main".py
+0 17,21 * * 7 i/usr/local/bin/python3 /Users/ssuri/downloads/"NFLPPA main".py
