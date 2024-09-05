@@ -352,3 +352,8 @@ sheet.clear()
 set_with_dataframe(worksheet=sheet, dataframe=df_merged, include_index=False
 				   #, include_column_header=True, resize=True
 				   )
+
+#post refresh time to summary tab
+sheet2 = client.open("NFLPPA est. 2022").worksheet("Timestamp")
+date_now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+sheet2.update_acell('A1', date_now)
