@@ -65,10 +65,11 @@ homepts = []
 # START LOOP FOR SEASON SCHEDULES AND RESULTS #
 #############################################################################################
 for week_number in week_counter:
+	
 	#############################################################################################
 	# LIST OF GAMES BY WEEK #
 	#############################################################################################
-	querystring_sched = {"week": week_number, "seasonType": "reg", "season": "2023"}
+	querystring_sched = {"week": week_number, "seasonType": "reg"}
 	response = requests.get(url_sched, headers=headers_sched, params=querystring_sched)
 	input_dict_sched = response.json()
 	body_dict_sched = input_dict_sched["body"]
@@ -77,10 +78,11 @@ for week_number in week_counter:
 		game.append((i['gameID']))
 		week.append((i['gameWeek']))
 		gameStatusCode.append((i['gameStatusCode']))
+		
 	#############################################################################################
 	# LIST OF RESULTS BY WEEK #
 	#############################################################################################
-	querystring_results = {"gameWeek": week_number, "season": "2023", "seasonType": "reg"}
+	querystring_results = {"gameWeek": week_number, "seasonType": "reg"}
 	response = requests.get(url_results, headers=headers_results, params=querystring_results)
 	input_dict_results = response.json()
 	body_dict_results = input_dict_results["body"]
