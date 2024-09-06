@@ -14,28 +14,28 @@ import numpy as np
 # query params for schedule call
 url_sched = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLGamesForWeek"
 headers_sched = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for results call
 url_results = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLScoresOnly"
 headers_results = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player stats call
 url_player_stats = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLBoxScore"
 headers_player_stats = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player list call
 url_player_list = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList"
 headers_player_list = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
@@ -346,6 +346,11 @@ df_merged = df_merged.dropna(axis=0, how='all',
 									 'turnovers'])
 
 # append derived columns
+df_merged['rushyds'] = pd.to_numeric(df_merged['rushyds']).astype('Int64')
+df_merged['passyds'] = pd.to_numeric(df_merged['passyds']).astype('Int64')
+df_merged['recyds'] = pd.to_numeric(df_merged['recyds']).astype('Int64')
+
+
 df_merged['totalyds'] = df_merged['rushyds'] + df_merged['passyds']
 df_merged['totalrushrecyds'] = df_merged['rushyds'] + df_merged['recyds']
 
@@ -355,6 +360,7 @@ sheet.clear()
 set_with_dataframe(worksheet=sheet, dataframe=df_merged, include_index=False
 				   #, include_column_header=True, resize=True
 				   )
+
 
 #post refresh time to summary tab
 sheet2 = client.open("NFLPPA est. 2022").worksheet("Timestamp")
