@@ -1,5 +1,5 @@
-from datetime import date
 import requests
+from datetime import date
 import pandas as pd
 import json
 import gspread
@@ -14,28 +14,28 @@ import numpy as np
 # query params for schedule call
 url_sched = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLGamesForWeek"
 headers_sched = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for results call
 url_results = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLScoresOnly"
 headers_results = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player stats call
 url_player_stats = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLBoxScore"
 headers_player_stats = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player list call
 url_player_list = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList"
 headers_player_list = {
-	"x-rapidapi-key": <secret>,
+	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
@@ -300,11 +300,11 @@ fantasy_df = pd.DataFrame(fantasy_list, columns=['fanplayer_id', 'fanname', 'fan
 team_stats_df = pd.DataFrame(team_stats_list, columns=['team_player_id', 'teamname', 'dst_td', 'turnovers'])
 
 # merge data frames
-df_merged = receiving_df.merge(rushing_df, left_on=['replayer_id'], right_on=['rplayer_id'], how='outer')
-df_merged = df_merged.merge(passing_df, left_on=['rplayer_id'], right_on=['pplayer_id'], how='outer')
-df_merged = df_merged.merge(kicking_df, left_on=['pplayer_id'], right_on=['kplayer_id'], how='outer')
-df_merged = df_merged.merge(def_df, left_on=['kplayer_id'], right_on=['fplayer_id'], how='outer')
-df_merged = df_merged.merge(fantasy_df, left_on=['fplayer_id'], right_on=['fanplayer_id'], how='outer')
+df_merged = fantasy_df.merge(receiving_df, left_on=['fanplayer_id'], right_on=['replayer_id'], how='outer')
+df_merged = df_merged.merge(rushing_df, left_on=['fanplayer_id'], right_on=['rplayer_id'], how='outer')
+df_merged = df_merged.merge(passing_df, left_on=['fanplayer_id'], right_on=['pplayer_id'], how='outer')
+df_merged = df_merged.merge(kicking_df, left_on=['fanplayer_id'], right_on=['kplayer_id'], how='outer')
+df_merged = df_merged.merge(def_df, left_on=['fanplayer_id'], right_on=['fplayer_id'], how='outer')
 df_merged = df_merged.merge(team_stats_df, left_on=['fanplayer_id'], right_on=['team_player_id'], how='outer')
 
 # drop dupe columns
