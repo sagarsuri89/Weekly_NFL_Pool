@@ -5,6 +5,8 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from gspread_dataframe import set_with_dataframe
+import datetime
+import numpy as np
 
 #############################################################################################
 # CONNECTION DETAILS #
@@ -12,28 +14,28 @@ from gspread_dataframe import set_with_dataframe
 # query params for schedule call
 url_sched = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLGamesForWeek"
 headers_sched = {
-	"x-rapidapi-key": "15149d3fe6msh5d4b135cc7c1aa8p1af871jsn32cee4387feb",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for results call
 url_results = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLScoresOnly"
 headers_results = {
-	"x-rapidapi-key": "15149d3fe6msh5d4b135cc7c1aa8p1af871jsn32cee4387feb",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player stats call
 url_player_stats = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLBoxScore"
 headers_player_stats = {
-	"x-rapidapi-key": "15149d3fe6msh5d4b135cc7c1aa8p1af871jsn32cee4387feb",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player list call
 url_player_list = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList"
 headers_player_list = {
-	"x-rapidapi-key": "15149d3fe6msh5d4b135cc7c1aa8p1af871jsn32cee4387feb",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
@@ -222,7 +224,8 @@ for index, row in current_week_games.iterrows():
 			if "Kicking" in player_stats_dict[i]:
 				kicker_stats_dict = player_stats_dict[i]
 				kicking_stats_dict = kicker_stats_dict["Kicking"]
-				kicking_pts = kicking_stats_dict["kickingPts"]
+				if "kickingPts" in kicking_stats_dict:
+					kicking_pts = kicking_stats_dict["kickingPts"]
 				kname = kicker_stats_dict["longName"]
 				kteam = kicker_stats_dict["team"]
 				kplayer_id = kicker_stats_dict["playerID"]
@@ -261,7 +264,7 @@ for index, row in current_week_games.iterrows():
 				fantasy_points = np.nan
 				fanname = fantasy_player_dict["longName"]
 				fanteam = fantasy_player_dict["team"]
-			fantasy_list.append([fanname, fanteam, fanplayer_id, fantasy_points])
+			fantasy_list.append([fanplayer_id, fanname, fanteam, fantasy_points])
 
 	if "teamStats" in body_dict_player_stats:
 		# pull turnovers by team
