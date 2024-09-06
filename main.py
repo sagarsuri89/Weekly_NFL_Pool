@@ -14,28 +14,28 @@ import numpy as np
 # query params for schedule call
 url_sched = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLGamesForWeek"
 headers_sched = {
-	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for results call
 url_results = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLScoresOnly"
 headers_results = {
-	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player stats call
 url_player_stats = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLBoxScore"
 headers_player_stats = {
-	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
 # query params for player list call
 url_player_list = "https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList"
 headers_player_list = {
-	"x-rapidapi-key": "995ddaeee9msh0dd1fd247fbb15dp1b6ddfjsn53c1991d7c79",
+	"x-rapidapi-key": <secret>,
 	"x-rapidapi-host": "tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com"
 }
 
@@ -226,6 +226,8 @@ for index, row in current_week_games.iterrows():
 				kicking_stats_dict = kicker_stats_dict["Kicking"]
 				if "kickingPts" in kicking_stats_dict:
 					kicking_pts = kicking_stats_dict["kickingPts"]
+				if "kickingPts" not in kicking_stats_dict:
+					kicking_pts = np.nan
 				kname = kicker_stats_dict["longName"]
 				kteam = kicker_stats_dict["team"]
 				kplayer_id = kicker_stats_dict["playerID"]
