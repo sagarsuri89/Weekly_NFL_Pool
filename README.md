@@ -5,14 +5,23 @@ This repository contains code for an NFL playoff pool which pulls from the free 
 This format supports for teams/owners. Each owner picks three teams in a draft style format below.
 
 1, 20, 26
+
 2, 16, 29
+
 3, 13, 30
+
 4, 18, 25
+
 5, 15, 27
+
 6, 19, 22
+
 7, 11, 28
+
 8, 17, 21
+
 9, 14, 23
+
 10, 12, 24
 
 End of season payout goes to owner with most wins in aggregate across their three teams. This format supports a second place payout as well. 
