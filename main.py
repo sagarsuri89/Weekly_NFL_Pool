@@ -352,6 +352,8 @@ df_merged['rushyds'] = pd.to_numeric(df_merged['rushyds']).astype('Int64')
 df_merged['passyds'] = pd.to_numeric(df_merged['passyds']).astype('Int64')
 df_merged['recyds'] = pd.to_numeric(df_merged['recyds']).astype('Int64')
 
+#replace NaN's with 0 for upcoming derived field calculations
+df_merged = df_merged.fillna(0)
 
 df_merged['totalyds'] = df_merged['rushyds'] + df_merged['passyds']
 df_merged['totalrushrecyds'] = df_merged['rushyds'] + df_merged['recyds']
