@@ -1,7 +1,7 @@
 # What is this? 
 This repository contains code for an NFL playoff pool which pulls from the free tier of [this rapidapi.com API](https://rapidapi.com/tank01/api/tank01-nfl-live-in-game-real-time-statistics-nfl). 
 
-# How does the pool format? 
+# What is the pool format? 
 This format supports for teams/owners. Each owner picks three teams in a draft style format below.
 
 1, 20, 26
