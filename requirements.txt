@@ -1,0 +1,8 @@
+requests
+datetime
+pandas
+json
+gspread
+oauth2client.service_account
+gspread_dataframe
+numpy
