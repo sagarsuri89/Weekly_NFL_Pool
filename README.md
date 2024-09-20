@@ -75,7 +75,7 @@ For first time commissioners, you'll need to do the following:
 
 2) Install any dependencies listed [here](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/requirements.txt)
 
-3) Setup credentials for programmatic access to google sheets ([Instructions](https://developers.google.com/sheets/api/quickstart/python)) 
+3) Setup credentials for programmatic access to google sheets ([Instructions](https://developers.google.com/sheets/api/quickstart/python)). You'll need to update the reference to your creds in the python script main.py. Also will need to update any references to gsheet tabs/files in the script. 
 
 4) If you want to automatically run refreshes, you can setup a cronjob using this [format](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/crontab.txt)
 
