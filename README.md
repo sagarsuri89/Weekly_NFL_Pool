@@ -64,10 +64,10 @@ Week 17	Receiver w/ Most Rec Yards
 
 Week 18	RB Most Fantasy Points
 
-More rules can be found in the "Rules" tab of this [xlsx file](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/NFLPPA%20est.%202022.xlsx)
+More rules can be found in the "Rules" tab of this [xlsx file](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/NFLPPA%20est.%202022%20Template.xlsx)
 
 # How can I adopt this for my league? 
-Annual commissioner instructions can be found in the "Commissioner Instructions" tab of this [xlsx file](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/NFLPPA%20est.%202022.xlsx).
+Annual commissioner instructions can be found in the "Commissioner Instructions" tab of this [xlsx file](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/NFLPPA%20est.%202022%20Template.xlsx).
 
 For first time commissioners, you'll need to do the following: 
 
