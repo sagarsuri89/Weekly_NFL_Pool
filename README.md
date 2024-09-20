@@ -29,22 +29,39 @@ End of season payout goes to owner with most wins in aggregate across their thre
 Additionally, a weekly payout is made based on the following stats (based on your three teams):
 
 Week 1	QB w/ Most Passing Yards
+
 Week 2	Team w/ Most Points Scored
+
 Week 3	Def with Least Yards Against
+
 Week 4	TE w/ Most Rec Yards
+
 Week 5	Receiver Most Fantasy Points
+
 Week 6	DST w/ Most Points (XP, FG, TD)
+
 Week 7	RB w/ Most Rush/Rec Yards
+
 Week 8	Kicker Most Points (XP, FG) 
+
 Week 9	QB with Most Completions
+
 Week 10	Def w/ Most Sacks
+
 Week 11	TE Most Fantasy Points
+
 Week 12	Def w/ Most Turnovers
+
 Week 13	QB w/ Most Rush Yards
+
 Week 14	Def w/ Least Points Against
+
 Week 15	QB Most Fantasy Points
+
 Week 16	Team w/ Least Points Scored
+
 Week 17	Receiver w/ Most Rec Yards
+
 Week 18	RB Most Fantasy Points
 
 More rules can be found in the "Rules" tab of this [xlsx file](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/NFLPPA%20est.%202022.xlsx)
