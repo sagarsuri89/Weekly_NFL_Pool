@@ -73,7 +73,7 @@ For first time commissioners, you'll need to do the following:
 
 1) Setup an account with [this rapidapi.com API](https://rapidapi.com/tank01/api/tank01-nfl-live-in-game-real-time-statistics-nfl) and get Free Tier. This is a free plan offering a hard cap of 1,000 hits per month. This plan does NOT require a credit card but likely won't last the full season dependencing on your refresh frequency so you may need to create a second account mid season.
 
-2) Install any dependencies listed here:
+2) Install any dependencies listed [here](https://github.com/sagarsuri89/Weekly_NFL_Pool/blob/main/requirements.txt)
 
 3) Setup credentials for programmatic access to google sheets ([Instructions](https://developers.google.com/sheets/api/quickstart/python)) 
 
